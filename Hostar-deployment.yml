@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: cont1
-        image: saikumarg738/hostarimage
+        image: saikumarg738/hotstar
 ---
 apiVersion: v1
 kind: Service
