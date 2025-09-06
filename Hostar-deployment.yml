@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hotstar-deployment
+  labels:
+    app: hotstar
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hotstar
+  template:
+    metadata:
+      labels:
+        app: hotstar
+    spec:
+      containers:
+      - name: cont1
+        image: saikumarg738/hostarimage
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hotstar-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: hotstar
+  ports:
+    - port: 80
+      targetPort: 8080
+      
